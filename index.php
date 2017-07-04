@@ -45,7 +45,7 @@
     ?>
     <!--Exo 4 : afficher seulement les clients encartés  -->
     <?php
-     $anwser = $bdd->query('SELECT * FROM clients WHERE card =1');
+     $anwser = $bdd->query('SELECT * FROM clients JOIN cards ON clients.cardNumber = cards.cardNumber JOIN cardTypes ON cards.cardTypesId = cardTypes.id WHERE cardTypes.id= 1');
      $anwser1 = $anwser->fetchALL();
      foreach ($anwser1 as $value) {
     ?>
